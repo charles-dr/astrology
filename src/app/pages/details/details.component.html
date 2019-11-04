@@ -1,0 +1,85 @@
+<mat-card class="page-details"> 
+  <div class="page-wrapper">
+    <h2>{{ detail.name }}</h2>
+    
+    <div class="content-container">
+      <div class="icon-wrapper">
+        <img class="zodiac-img" src="assets/icons/{{detail.icon}}">
+      </div>
+
+      <div class="text-wrapper">
+        <p class="date-range text-center">{{ detail.strDateFrom }} - {{ detail.strDateTo }}</p>
+
+        <div class="content-text">
+          <ul class="property-list mb-30">
+            <li>
+              <h3>Element</h3>
+              <span>{{ detail.element }}</span>
+            </li>
+
+            <li>
+              <h3>Quality</h3>
+              <span>{{ detail.quality }}</span>
+            </li>
+            
+            <li>
+              <h3>Color</h3>
+              <span>{{ detail.color }}</span>
+            </li>
+                        
+            <li>
+              <h3>Day</h3>
+              <span>{{ detail.day }}</span>
+            </li>
+                        
+            <li>
+              <h3>Ruler</h3>
+              <span>{{ detail.ruler }}</span>
+            </li>
+                        
+            <li>
+              <h3>Greatest Overall Compatibility</h3>
+              <span>{{ detail.GOC }}</span>
+            </li>
+                        
+            <li>
+              <h3>Lucky Numbers</h3>
+              <span>{{ detail.luckyNumbers }}</span>
+            </li>
+                        
+            <li>
+              <h3>Strengths</h3>
+              <span>{{ detail.strengths }}</span>
+            </li>
+                                    
+            <li>
+              <h3>Weaknesses</h3>
+              <span>{{ detail.weaknesses }}</span>
+            </li>
+                                    
+            <li>
+              <h3>{{detail.name}} likes</h3>
+              <span>{{ detail.likes }}</span>
+            </li>
+                                    
+            <li class="mb-30">
+              <h3>{{detail.name}} dislikes</h3>
+              <span>{{ detail.dislikes }}</span>
+            </li>
+
+            <mat-accordion class="full-width">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h3>TRAITS</h3>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <span>{{ detail.traits }}</span>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

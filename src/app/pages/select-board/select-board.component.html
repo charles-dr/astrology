@@ -1,0 +1,22 @@
+<div class="page-details"> 
+  <div class="page-wrapper">
+    <div class="month-container">
+      <div matRipple [matRippleColor]="primary" class="month-item" *ngFor="let month of months" routerLink="/details/{{month}}">
+        <p>{{ month }}</p>
+      </div>
+    </div>
+
+    <div class="input-container"> 
+      <mat-form-field>
+        <input matInput placeholder="Month" type="number" [(ngModel)]="selDate.month"/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Date" type="number" [(ngModel)]="selDate.date"/>
+      </mat-form-field>
+    </div>
+
+    <div class="btn-container">
+        <button mat-flat-button color="primary" (click)="generateRandom()">Random</button>
+    </div>
+  </div>
+</div>

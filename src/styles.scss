@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* ------ COLORS -------- */
+:root {
+    --color-background: #f9f9f9;
+    --color-grey: #86888f;
+    --color-red: red;
+  }
+  
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.font-12 { font-size: 12px; }
+.font-14 { font-size: 14px; }
+.font-16 { font-size: 16px; }
+.font--18 { font-size: 18px; }
+
+.color-grey { color: var(--color-grey); }
+.color-red { color: var(--color-red); }
+
+.text-center {
+    text-align: center;
+}
+
+.full-width { width: 100%; }
+
+.mt-20 { margin-top: 20px !important; }
+.mt-30 { margin-top: 30px !important; }
+
+.mb-20 { margin-bottom: 20px !important; }
+.mb-30 { margin-bottom: 30px !important; }
+
+.pt-20 { padding-top: 20px !important; }
+.pt-15 { padding-top: 15px !important; }

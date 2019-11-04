@@ -1,0 +1,54 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    
+    <div class="birthday-container">
+      <p class="container-title font-14">Your Date & Time Of Birth</p>
+
+      <!-- Inputs for Y-m-d -->
+      <div class="one-row">
+        <mat-form-field>
+          <input matInput placeholder="DAY" type="number" [(ngModel)]="formValue.date"/>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="MONTH" type="number" [(ngModel)]="formValue.month"/>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="YYYY" type="number" [(ngModel)]="formValue.year"/>
+        </mat-form-field>
+      </div>
+
+      <!-- Time Row -->
+      <p class="text-center font-14">Time Of Birth(Optional)</p>
+      <div class="time-row">
+
+        <mat-form-field>
+          <input matInput placeholder="HH" type="text" [(ngModel)]="formValue.hour"/>
+        </mat-form-field>
+        <span class="pt-15">:</span>
+        <mat-form-field>
+          <input matInput placeholder="MM" type="text" [(ngModel)]="formValue.minute"/>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select [(ngModel)]="formValue.ampm">
+            <mat-option value="AM">AM</mat-option>
+            <mat-option value="PM">PM</mat-option>
+          </mat-select>
+        </mat-form-field>        
+      </div>
+
+      <p class="text-center font-12 color-grey">
+        We need your full date and time of birth to make accurate predictions.
+      </p>
+    </div>
+
+    <!-- <p class="font-14">City of Birth<span class="color-red">*</span></p> -->
+    <mat-form-field class="full-width mt-20">
+      <input matInput placeholder="City of Birth"/>
+    </mat-form-field>
+
+    <button mat-flat-button class="full-width mt-30 mb-30 calc-button" (click)="submitForm()">Calculate My Sign >></button>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <div class="page-details"> 
   <div class="page-wrapper">
     <div class="month-container">
-      <div matRipple [matRippleColor]="primary" class="month-item" *ngFor="let month of months" routerLink="/details/{{month}}">
+      <div matRipple [matRippleColor]="primary" class="month-item" *ngFor="let month of months" (click)="openDetail(month)">
         <p>{{ month }}</p>
       </div>
     </div>

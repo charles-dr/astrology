@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from './../../services/data.service';
+import { HistoryService } from './../../services/histroy.service';
+
+import { Zodiac } from './../../models/zodiac.model';
+import { History } from './../../models/history.model';
+
 
 
 @Component({
@@ -17,6 +22,7 @@ export class SelectBoardComponent implements OnInit {
   constructor(
     private router: Router,
     private dataService: DataService,
+    private historyService: HistoryService
   ) { }
 
   ngOnInit() {
@@ -50,8 +56,33 @@ export class SelectBoardComponent implements OnInit {
   checkNOpenDetails() {
     const zodiacId = this.dataService.getZodiacID(this.selDate.month, this.selDate.date);
     setTimeout(() => {
+
+      // add history to the list
+      const zodiac: Zodiac = this.dataService.getZodiacDetailById(zodiacId - 1);
+      const history: History = {
+        birthdate: this.dataService.getMonthName(this.selDate.month - 1) + ' ' +  this.selDate.date,
+        result: zodiac.name,
+        savedAt: new Date(),
+        updatedAt: new Date(),
+      };
+      this.historyService.addHistory(history);
+
       this.router.navigate(['/details/' + zodiacId]);
     }, 1000);
+  }
+
+  openDetail(month: number) {
+    // add history to the list
+    const zodiac: Zodiac = this.dataService.getZodiacDetailById(month - 1);
+    const history: History = {
+      birthdate: this.dataService.getMonthName(month - 1),
+      result: zodiac.name,
+      savedAt: new Date(),
+      updatedAt: new Date(),
+    };
+    this.historyService.addHistory(history);
+
+    this.router.navigate([`/details/${month}`]);
   }
 
 }

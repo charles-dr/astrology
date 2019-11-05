@@ -3,7 +3,11 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { MyForm } from './../../models/my.form.model';
+import { History } from './../../models/history.model';
+
 import { DataService } from './../../services/data.service';
+import { HistoryService } from './../../services/histroy.service';
+import { Zodiac } from 'src/app/models/zodiac.model';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +22,7 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private snackBar: MatSnackBar,
     private dataService: DataService,
+    private historyService: HistoryService
     ) { }
 
   ngOnInit() {
@@ -39,7 +44,7 @@ export class HomeComponent implements OnInit {
    */
   submitForm() {
     let isFormValid: boolean;
-    
+
     isFormValid = this.checkFormValid(); console.log(isFormValid);
 
     if (!isFormValid) {
@@ -49,6 +54,18 @@ export class HomeComponent implements OnInit {
     this.dataService.calculateZodiac(this.formValue).then((res: any) => {
       console.log('[Calc Result]', res);
       if (res.status === true) {
+
+        // add history to the list
+        const zodiac: Zodiac = this.dataService.getZodiacDetailById(res.idx - 1);
+        const history: History = {
+          birthdate: this.dataService.getMonthName(this.formValue.month - 1) + ' ' +  this.formValue.date,
+          result: zodiac.name,
+          savedAt: new Date(),
+          updatedAt: new Date(),
+        };
+        this.historyService.addHistory(history);
+
+        // navigate to details
         this.router.navigate([`details/${res.idx}`]);
       } else {
         this.openSnackBar('Please input valid information!');
@@ -95,8 +112,6 @@ export class HomeComponent implements OnInit {
 
     return valid;
   }
-
-
 
   openSnackBar(message: string, action: string = 'Ok') {
     this.snackBar.open(message, action, {

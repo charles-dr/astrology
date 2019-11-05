@@ -11,13 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyMaterialModule } from './extra/material-module';
 import { DetailsComponent } from './pages/details/details.component';
 import { SelectBoardComponent } from './pages/select-board/select-board.component';
+import { HistoryListComponent } from './pages/history-list/history-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DetailsComponent,
-    SelectBoardComponent
+    SelectBoardComponent,
+    HistoryListComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ import { DataService } from './../../services/data.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
 

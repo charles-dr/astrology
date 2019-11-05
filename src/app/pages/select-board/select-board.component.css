@@ -1,0 +1,78 @@
+.page-details {
+    width: 100%;
+    max-width: 1024px;
+    padding: 15px;
+    box-sizing: border-box;
+    min-height: 200px;
+    background: #fff;
+    margin: auto;
+    margin-top: 5%;
+    /* box-shadow: 2px 3px 3px #454545; */
+}
+
+.page-wrapper {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.month-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.month-item {
+    width: 15%;
+    padding-bottom: 15%;
+    margin-top: 2.5%;
+    position: relative;
+    border: 1px solid #454545;
+    border-radius: 50%;
+}
+
+.month-item p {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* border: 1px solid #454545; */
+    /* border-radius: 50%; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 24px;
+    background: var(--color-background);
+    cursor: pointer;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.input-container mat-form-field {
+    margin: 10px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 568px){
+    .month-item {
+        width: 22%;
+        padding-bottom: 22%;
+        margin-top: 4%;
+        position: relative;
+        border: 1px solid #454545;
+        border-radius: 50%;
+    }
+}

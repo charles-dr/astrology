@@ -1,0 +1,35 @@
+.page-container {
+    width: 100%;
+    max-width: 640px;
+    background: #fefefe;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10%;
+    box-sizing: border-box;
+
+}
+
+.content-wrapper {
+    min-height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-top: 35px;
+    border: 1px solid #bebebe;
+    border-radius: 15px;
+    background: var(--color-background);
+}
+
+.birthday-container { padding: 10px; border: 1px solid #bebebe; border-radius: 5px; position: relative; }
+
+.container-title { position: absolute; top: -27px; left: 15px; padding: 3px 7px; background: var(--color-background); }
+
+.one-row { display: flex; justify-content: space-between; }
+
+.one-row mat-form-field { width: 30%; }
+
+.time-row { display: flex; justify-content: space-between; }
+
+.time-row mat-form-field { width: 30%; }
+
+.calc-button { background: #38b338; color: #fff; }

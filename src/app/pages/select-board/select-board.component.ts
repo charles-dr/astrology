@@ -6,7 +6,7 @@ import { DataService } from './../../services/data.service';
 @Component({
   selector: 'app-select-board',
   templateUrl: './select-board.component.html',
-  styleUrls: ['./select-board.component.scss']
+  styleUrls: ['./select-board.component.css']
 })
 export class SelectBoardComponent implements OnInit {
 

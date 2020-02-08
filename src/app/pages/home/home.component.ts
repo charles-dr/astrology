@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * @function submitForm
+   * @8uuufunction submitForm
    * @param void
    * @return void
    */
@@ -88,15 +88,12 @@ export class HomeComponent implements OnInit {
 
     let required = [];
     // year, month, date are required
-    if (
-      this.formValue.year === null || this.formValue.year <= 0) {
+    if (this.formValue.year === null || this.formValue.year <= 0) {
         valid = false;
         required.push('Year');
     }
 
-    if (
-      this.formValue.month === null || this.formValue.month <= 0
-    ) {
+    if (this.formValue.month === null || this.formValue.month <= 0) {
       valid = false;
       required.push('Month');
     }

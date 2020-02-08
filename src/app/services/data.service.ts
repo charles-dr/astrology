@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { Zodiac } from './../models/zodiac.model';
 import { MyForm } from './../models/my.form.model';
-import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable({
     providedIn: 'root'
@@ -281,7 +280,7 @@ export class DataService {
         console.log('[Service - CalculateZodiac]');
         return new Promise((resolve, reject) => {
             try {
-                const zodiacId = this.getZodiacID(formValue.month, formValue.date); console.log(zodiacId);
+                const zodiacId = this.getZodiacID(formValue.month, formValue.date); // console.log(zodiacId);
                 if (zodiacId > 0) {
                     this.currentId = zodiacId - 1;
                     resolve({ status: true, idx: zodiacId });
